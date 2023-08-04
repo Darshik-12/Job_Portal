@@ -1,0 +1,4 @@
+# here add the files which we want to keep private
+node_module
+config.env
+info.txt

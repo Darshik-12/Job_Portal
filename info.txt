@@ -1,0 +1,486 @@
+npm init -y -> create package.json
+npm i express  
+nodemon app.js // for start the server //backend
+npm i mongoose
+
+
+
+//for file upload
+npm i cors 
+npm i body-parser
+npm i formidable
+
+{
+        "name": "darshik",
+        "dob": "2003-09-29",
+        "email": "darshik5@gmail.com",
+        "mobile": "1234567897",
+        "password": "darshik",
+        "cpassword": "darshik"
+}
+
+"proxy": "http://localhost:5000",
+
+{
+    "companyName": "ddit",
+   "contactPersonName" : "ABC",
+    "email": "darshik5@gmail.com",
+    "mobile": "1234567897",
+    "password": "darshik",
+    "cpassword": "darshik",
+    "state" : "Gujarat",
+    "city" : "Nadiad"
+}
+
+ const employeeLogin = await Employee.findOne({email: email});
+        const companyLogin = Company.findOne({email: email});
+        if(employeeLogin || companyLogin){
+            const userLogin = employeeLogin ? employeeLogin : companyLogin;
+            const isMatch = await bcrypt.compare(password, userLogin.password);}
+
+
+
+
+
+{
+   "contactPersonName" : "ABC",
+    "email": "darshik5@gmail.com",
+    "mobile": "1234567897",
+    "companyName": "ddit",
+    "jobTypes" : [
+        { 
+        "jobType" : "part time"
+        }
+    ],
+    "fieldTypes" : [
+        { 
+        "fieldType" : "Computer"
+        }
+    ],
+    "genders" : 
+        { 
+        "male":"true",
+        "female":"true"
+        },
+    "experience" : "23",
+    "salary" : { 
+        "minSalary" : "40000",
+        "maxSalary" : "50000"
+        },
+     duration : {
+        openDate : "2003-09-29",
+        closeDate : "2005-09-22"
+    },
+  "location" : "Gujarat",
+   ageLimit : {
+        minAge : "22",
+        maxAge : "25"
+    },
+  vacancies : "35",
+  skills : [
+    {
+        skill : "c++"
+    }
+  ],
+  qualification: [
+    {
+      qulify: "B. Tech.",
+    },
+  ],
+}
+
+
+//for add job 
+{ 
+"companyName" : "reliance",
+"vacancies" : "25",
+"city" : "jamnagar",
+"state" : "gujarat",
+"skills" : "c, c++",
+"ageLimit" : "20",
+"experience" : "3-4 year",
+"salary" : "upto 40,000 ₹",
+"qualification" : "12th",
+"openDate" : "2023-03-31",
+"closeDate" : "2023-03-14",
+"jobType" : "Full Time",
+"fieldTypes" : "Civil",
+"gender" : "Female"
+}
+
+//for application schema
+
+
+{ 
+photo: {
+    data: Buffer,
+    contentType: String,
+  },
+  
+  "name": "darshik",
+  "email": "darshik@gmail.com",
+  "mobile": "5696869568",
+  "gender": "male",
+  "age": "23",
+  "experience" : "3",
+  "qualification": [
+    {
+      "qualify" : "10th standard",
+      "qualify" : "12th standard"
+    },
+  ],
+  "skills": [
+    {
+      "skill": "c++",
+      "skill": "c"
+    }
+  ],
+  resume: ,
+}
+
+
+
+//for schema information
+-https://stackoverflow.com/questions/35509611/mongoose-save-array-of-strings
+
+
+
+
+
+
+
+
+
+import { React } from "react";
+import 'bootstrap/dist/css/bootstrap.css';
+import '../view/Navbar.css';
+import  {AiFillCaretDown} from "react-icons/ai";
+import {Outlet, Link} from "react-router-dom";
+
+
+const Navbar = () => {
+
+  return(
+    <>
+   <nav className="main-nav">
+    <div className="logo">
+      <h2>
+        <span>J</span>ob 
+        <span>P</span>ortal
+      </h2>
+    </div>
+    <div className="menu-link">
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/login">Login</Link>
+            </li>
+            <li>
+              <div class = "dropdown">
+                 <button class = "dropbtn">
+                  Register
+                  <AiFillCaretDown />
+                 </button>
+                 
+                 <div class="dropdown-content">
+                <Link to="/companyRegister">Company</Link>
+                <Link to="/employeeRegister">Employee</Link>
+                 </div>
+              </div>
+            </li>
+            <li>
+              <Link to="/profile">View Profile</Link>
+            </li>
+            <li>
+              <Link to="/contact">Contact</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+          </ul>
+    </div>
+   </nav>
+   <Outlet />
+    </>
+  )
+};
+
+export default Navbar;
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Jost", sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+a {
+    position: static;
+    padding : 10px;
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+
+.logo h2 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    background: -webkit-linear-gradient(rgb(212, 44, 44), rgb(38, 29, 165));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+}
+.logo h2 span {
+    font-size: 3.5rem;
+}
+.logo {
+    display: grid;
+    /* background-color: #3b5998; */
+    grid-column: 2/3;
+    justify-content: start;
+    align-items: center;
+}
+
+.main-nav{
+    width: 100%;
+    height: 8rem;
+    display: grid;
+    grid-template-columns: 8rem 1fr 0.8fr;
+    background-color: #e5e4e2;
+}
+
+
+.menu-link ul li {
+    font-size: 1.8rem;
+}
+
+.menu-link ul li a{
+    text-transform: capitalize;
+    color: rgba(0, 0, 3, 1);
+    transition: 0.5s;
+}
+
+.menu-link ul li:hover > a{
+   transform-origin: left;
+   color: rgba(0, 0, 3, 1);
+   text-decoration: none;
+   transition: 0.5s;
+   background-color: #a9a9a9;
+   border-radius: 10px;
+}
+
+.menu-link {
+    grid-column-end: 2/3;
+}
+
+.menu-link ul {
+    height: 10rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+/* for dropdown of register */
+.dropdown {
+    float: right;
+    /* overflow: hidden; */
+}
+
+.dropdown .dropbtn {
+    font-size: 1.8rem;
+    border: none;
+    outline: none;
+    color: rgba(0, 0, 3, 1);
+    padding: 5px 8px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.dropdown:hover .dropbtn {
+   transform-origin: left;
+   color: rgba(0, 0, 3, 1);
+   transition: 1s;
+   background-color: #a9a9a9;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 6px 8px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+/* 
+@media screen and (max-width: 600px) {
+    .main-nav a:not(:first-child) {display: none;}
+    .main-nav a.icon {
+      float: right;
+      display: block;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .main-nav.responsive {position: relative;}
+    .main-nav.responsive a.icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .main-nav.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+  } */
+
+
+  @media (max-width: 998px) {
+    .main-nav {
+        height: 7rem;
+        grid-template-columns: 2rem 2fr 2fr 2rem 2rem;
+    }
+  }
+
+
+
+  .auth {
+    text-align: center;
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-image: linear-gradient(79deg, #000, #DC143C 150%);
+  }
+  
+  .auth-form-container, .login-form, .register-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  @media screen and (min-width: 600px) {
+    .auth-form-container {
+      padding: 5rem;
+      border: 1px solid white;
+      border-radius: 10px;
+      margin: 0.5rem;
+    }
+
+     div.row #lbl {
+      display: flex;
+      flex-direction: column;
+      align-content: space-around;
+  } 
+
+  }
+  
+  label {
+    text-align: center;
+    display: flex;
+    text-align: left;
+    margin-top: 30px;
+    float: left;
+    
+  }
+ #login-lbl {
+  display: inline-block;
+  width: 100px;
+  text-align: left;
+
+} 
+  
+  input {
+    margin: 0.4rem 0;
+    padding: 3rem;
+    border: none;
+    border-radius: 10px;
+    margin-left: 50px;
+    float: right;
+  }
+  
+  .row{
+    margin: 12px 0 15px 0;
+    /* display: block; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.3rem;
+  }
+  
+
+  button {
+    margin-top: 13px;
+    border: none;
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #7439db;
+    width: 100%;
+  }
+  
+  .link-btn {
+    background: none;
+    color: white;
+    text-decoration: underline;
+  }
+ /* div.row #mobile {
+  background-color: pink;
+ } */
+
+/*   
+@media screen and (min-width: 576px) {
+  .auth {
+    max-width: 540px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+.auth {
+  max-width: 720px;
+}
+}
+
+@media screen and (min-width: 992px) {
+.auth {
+  max-width: 960px;
+}
+}
+
+@media screen and (min-width: 1200px) {
+.auth {
+  max-width: 1140px;
+}
+} */
+
